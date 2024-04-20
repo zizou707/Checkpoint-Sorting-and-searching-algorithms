@@ -1,0 +1,35 @@
+ALGORITHM Sorting and searching
+VAR
+    // i is counting number in the array and n is array.length
+ i ,j , n ,key: INTEGER ;
+ arr  : ARRAY_OF type[INTEGER];
+BEGIN
+   //writing and reading the array 
+   WRITE("Enter an array of integers :");
+   READ(arr);
+   //
+   
+   n := arr.length ;
+   
+   FUNCTION insertion_sort(arr) : ARRAY_OF[INTEGER]
+   VAR
+    i , j : INTEGER ;
+    
+   BEGIN
+
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        
+    
+        VAR key = arr[i];
+        VAR j = i-1;
+        WHILE (j >= 0 && arr[j] > key) DO
+            arr[j+1] = arr[j];
+            j--;
+        END_WHILE 
+       arr[j+1] = key;    
+     END_FOR
+    RETURN arr ;
+   END
+insertion_sort(arr) ;
+
+END
